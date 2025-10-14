@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Tuberculosis (120 Preguntas)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #status {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            color: #555;
+        }
+        .question-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .question-card p {
+            font-weight: bold;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .option-label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option-label:hover {
+            background-color: #e0e0e0;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* Estilos de retroalimentación */
+        .correct {
+            background-color: #d4edda !important; /* Verde claro */
+            color: #155724 !important; /* Texto verde oscuro */
+            border: 1px solid #c3e6cb !important;
+        }
+        .incorrect {
+            background-color: #f8d7da !important; /* Rojo claro */
+            color: #721c24 !important; /* Texto rojo oscuro */
+            border: 1px solid #f5c6cb !important;
+        }
+        .hidden-correct { /* Resalta la respuesta correcta no seleccionada */
+            background-color: #a4e4af !important; 
+            color: #155724 !important;
+            border: 1px dashed #40924e !important;
+        }
+        /* Controles y resultados */
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+        #submit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        #submit-btn:hover {
+            background-color: #1e7e34;
+        }
+        #next-round-btn {
+            background-color: #007bff;
+            color: white;
+            display: none;
+        }
+        #next-round-btn:hover {
+            background-color: #0056b3;
+        }
+        #score-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test sobre Tuberculosis 🦠</h1>
+        <h2>Rondas de 20 Preguntas (Total: 120)</h2>
+        
+        <div id="status">
+            </div>
+
+        <div id="quiz-container">
+            </div>
+
+        <div class="controls">
+            <button id="submit-btn" onclick="checkAnswers()">Verificar Respuestas</button>
+            <button id="next-round-btn" onclick="loadNextRound()">Siguiente Ronda</button>
+        </div>
+        
+        <div id="score-display">
+            </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
